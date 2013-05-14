@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bf0b4462-5b6f-43d7-b000-649c92018eda" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://api.fixionline.com/PrivateServices/TransactionService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TransactionService.xsd" MetadataType="Schema" ID="99a7e09f-1953-4f18-b322-d9a9e8e57213" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TransactionService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TransactionService1.xsd" MetadataType="Schema" ID="3c006f6c-8d42-4733-86d4-f802ad74c1b1" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TransactionService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TransactionService2.xsd" MetadataType="Schema" ID="9c22593c-d253-4942-b5a0-ff99ee8f43e7" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TransactionService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TransactionService.wsdl" MetadataType="Wsdl" ID="6f43d809-e2ea-4f4a-ac98-ca6bd34c4eed" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TransactionService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TransactionService1.wsdl" MetadataType="Wsdl" ID="afe410f0-8e42-4101-8f9c-7f615d059696" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TransactionService.svc?wsdl" />
+    <MetadataFile FileName="TransactionService.disco" MetadataType="Disco" ID="ffb21ab9-f8c1-43d8-900d-e31cc6cefb20" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TransactionService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

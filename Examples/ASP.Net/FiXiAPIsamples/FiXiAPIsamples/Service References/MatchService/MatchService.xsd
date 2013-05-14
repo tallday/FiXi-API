@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FiXi.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FiXi.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.fixionline.com/PrivateServices/MatchService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://api.fixionline.com/PrivateServices/MatchService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GetMatchesByDateRangeRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetMatchesByDateRangeRequest" nillable="true" type="tns:GetMatchesByDateRangeRequest" />
+  <xs:complexType name="GetMatchesByDateRangeResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MatchListViewList" nillable="true" type="tns:ArrayOfMatchListView" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMatchesByDateRangeResponse" nillable="true" type="tns:GetMatchesByDateRangeResponse" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:complexType name="ArrayOfMatchListView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchListView" nillable="true" type="tns:MatchListView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchListView" nillable="true" type="tns:ArrayOfMatchListView" />
+  <xs:complexType name="MatchListView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllocationSeriesId" type="xs:int" />
+      <xs:element minOccurs="0" name="AwayTeam" nillable="true" type="tns:TeamBasicFinancialView" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DivisionBasicView" nillable="true" type="tns:DivisionBasicView" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HomeTeam" nillable="true" type="tns:TeamBasicFinancialView" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ResourceList" nillable="true" type="tns:ArrayOfResourceListView" />
+      <xs:element minOccurs="0" name="Round" type="xs:int" />
+      <xs:element minOccurs="0" name="SeasonBasicView" nillable="true" type="tns:SeasonBasicView" />
+      <xs:element minOccurs="0" name="SportBasicView" nillable="true" type="tns:SportBasicView" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchListView" nillable="true" type="tns:MatchListView" />
+  <xs:complexType name="TeamBasicFinancialView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RoundFee" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TeamBasicView" nillable="true" type="tns:TeamBasicView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeamBasicFinancialView" nillable="true" type="tns:TeamBasicFinancialView" />
+  <xs:complexType name="TeamBasicView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeamBasicView" nillable="true" type="tns:TeamBasicView" />
+  <xs:complexType name="DivisionBasicView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DivisionBasicView" nillable="true" type="tns:DivisionBasicView" />
+  <xs:complexType name="ArrayOfResourceListView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceListView" nillable="true" type="tns:ResourceListView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceListView" nillable="true" type="tns:ArrayOfResourceListView" />
+  <xs:complexType name="ResourceListView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceListView" nillable="true" type="tns:ResourceListView" />
+  <xs:complexType name="SeasonBasicView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeasonBasicView" nillable="true" type="tns:SeasonBasicView" />
+  <xs:complexType name="SportBasicView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColorHTML" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextColorHTML" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SportBasicView" nillable="true" type="tns:SportBasicView" />
+  <xs:complexType name="GetMatchByIdRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetMatchByIdRequest" nillable="true" type="tns:GetMatchByIdRequest" />
+  <xs:complexType name="GetMatchByIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MatchDetailView" nillable="true" type="tns:MatchDetailView" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMatchByIdResponse" nillable="true" type="tns:GetMatchByIdResponse" />
+  <xs:complexType name="MatchDetailView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllocationSeriesId" type="xs:int" />
+      <xs:element minOccurs="0" name="AwayTeam" nillable="true" type="tns:TeamDetailFinancialView" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DivisionAttendanceView" nillable="true" type="tns:DivisionAttendanceView" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HomeTeam" nillable="true" type="tns:TeamDetailFinancialView" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ResourceList" nillable="true" type="tns:ArrayOfResourceListView" />
+      <xs:element minOccurs="0" name="Round" type="xs:int" />
+      <xs:element minOccurs="0" name="SeasonBasicView" nillable="true" type="tns:SeasonBasicView" />
+      <xs:element minOccurs="0" name="SportBasicView" nillable="true" type="tns:SportBasicView" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchDetailView" nillable="true" type="tns:MatchDetailView" />
+  <xs:complexType name="TeamDetailFinancialView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DiscountRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DiscountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayerViewList" nillable="true" type="tns:ArrayOfCustomerAsPlayerDetailView" />
+      <xs:element minOccurs="0" name="RegistrationBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Status" type="tns:StatusEnum" />
+      <xs:element minOccurs="0" name="TeamRegistrationFee" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UpcomingMatchList" nillable="true" type="tns:ArrayOfUpcomingMatchView" />
+      <xs:element minOccurs="0" name="WeeklyFeeDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WeeklyFeePaid" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeamDetailFinancialView" nillable="true" type="tns:TeamDetailFinancialView" />
+  <xs:complexType name="ArrayOfCustomerAsPlayerDetailView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerAsPlayerDetailView" nillable="true" type="tns:CustomerAsPlayerDetailView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerAsPlayerDetailView" nillable="true" type="tns:ArrayOfCustomerAsPlayerDetailView" />
+  <xs:complexType name="CustomerAsPlayerDetailView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DOB" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MatchAttended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MatchesAttendedPostRegistration" type="xs:int" />
+      <xs:element minOccurs="0" name="MatchesAttendedPreRegistration" type="xs:int" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Postcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RegistrationExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Role" type="tns:PlayerRoleEnum" />
+      <xs:element minOccurs="0" name="ShirtNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:PlayerStatusEnum" />
+      <xs:element minOccurs="0" name="Suburb" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerAsPlayerDetailView" nillable="true" type="tns:CustomerAsPlayerDetailView" />
+  <xs:simpleType name="PlayerRoleEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Coach">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PlayerCoach">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Captain">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Player">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Contact">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ViceCaptain">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlayerRoleEnum" nillable="true" type="tns:PlayerRoleEnum" />
+  <xs:simpleType name="PlayerStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Inactive" />
+      <xs:enumeration value="Suspended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlayerStatusEnum" nillable="true" type="tns:PlayerStatusEnum" />
+  <xs:simpleType name="StatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Inactive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatusEnum" nillable="true" type="tns:StatusEnum" />
+  <xs:complexType name="ArrayOfUpcomingMatchView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UpcomingMatchView" nillable="true" type="tns:UpcomingMatchView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUpcomingMatchView" nillable="true" type="tns:ArrayOfUpcomingMatchView" />
+  <xs:complexType name="UpcomingMatchView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AwayTeam" nillable="true" type="tns:TeamBasicView" />
+      <xs:element minOccurs="0" name="DivisionBasicView" nillable="true" type="tns:DivisionBasicView" />
+      <xs:element minOccurs="0" name="HomeTeam" nillable="true" type="tns:TeamBasicView" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MatchTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ResourceListView" nillable="true" type="tns:ResourceListView" />
+      <xs:element minOccurs="0" name="SeasonBasicView" nillable="true" type="tns:SeasonBasicView" />
+      <xs:element minOccurs="0" name="SportBasicView" nillable="true" type="tns:SportBasicView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpcomingMatchView" nillable="true" type="tns:UpcomingMatchView" />
+  <xs:complexType name="DivisionAttendanceView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DivisionBasicView" nillable="true" type="tns:DivisionBasicView" />
+      <xs:element minOccurs="0" name="MinimumAttendance" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DivisionAttendanceView" nillable="true" type="tns:DivisionAttendanceView" />
+  <xs:complexType name="GetMatchesByIdListRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MatchIdList" nillable="true" type="q1:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetMatchesByIdListRequest" nillable="true" type="tns:GetMatchesByIdListRequest" />
+  <xs:complexType name="GetMatchesByIdListResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MatchDetailViewList" nillable="true" type="tns:ArrayOfMatchDetailView" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMatchesByIdListResponse" nillable="true" type="tns:GetMatchesByIdListResponse" />
+  <xs:complexType name="ArrayOfMatchDetailView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchDetailView" nillable="true" type="tns:MatchDetailView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchDetailView" nillable="true" type="tns:ArrayOfMatchDetailView" />
+</xs:schema>

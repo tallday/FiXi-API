@@ -1,0 +1,9 @@
+C:\Users\Trent\AppData\Local\Temporary Projects\FiXiAPIsamples\bin\Debug\FiXiAPIsamples.exe.config
+C:\Users\Trent\AppData\Local\Temporary Projects\FiXiAPIsamples\bin\Debug\FiXiAPIsamples.exe
+C:\Users\Trent\AppData\Local\Temporary Projects\FiXiAPIsamples\bin\Debug\FiXiAPIsamples.pdb
+C:\Users\Trent\AppData\Local\Temporary Projects\FiXiAPIsamples\obj\Debug\FiXiAPIsamples.csprojResolveAssemblyReference.cache
+C:\Users\Trent\AppData\Local\Temporary Projects\FiXiAPIsamples\obj\Debug\FiXiAPIsamples.Form1.resources
+C:\Users\Trent\AppData\Local\Temporary Projects\FiXiAPIsamples\obj\Debug\FiXiAPIsamples.Properties.Resources.resources
+C:\Users\Trent\AppData\Local\Temporary Projects\FiXiAPIsamples\obj\Debug\FiXiAPIsamples.csproj.GenerateResource.Cache
+C:\Users\Trent\AppData\Local\Temporary Projects\FiXiAPIsamples\obj\Debug\FiXiAPIsamples.exe
+C:\Users\Trent\AppData\Local\Temporary Projects\FiXiAPIsamples\obj\Debug\FiXiAPIsamples.pdb

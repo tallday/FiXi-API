@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://FiXi.Contracts/PrivateServices" elementFormDefault="qualified" targetNamespace="http://FiXi.Contracts/PrivateServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.fixionline.com/PrivateServices/CustomerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FiXi.DataContract" />
+  <xs:element name="SaveCustomerAttendance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FiXi.DataContract" minOccurs="0" name="SaveCustomerAttendanceRequest" nillable="true" type="q1:SaveCustomerAttendanceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCustomerAttendanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FiXi.DataContract" minOccurs="0" name="SaveCustomerAttendanceResult" nillable="true" type="q2:SaveCustomerAttendanceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCustomerAttendanceList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FiXi.DataContract" minOccurs="0" name="SaveCustomerAttendanceRequestList" nillable="true" type="q3:SaveCustomerAttendanceListRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCustomerAttendanceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FiXi.DataContract" minOccurs="0" name="SaveCustomerAttendanceListResult" nillable="true" type="q4:SaveCustomerAttendanceListResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

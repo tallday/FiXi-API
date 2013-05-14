@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://FiXi.Contracts/PrivateServices" elementFormDefault="qualified" targetNamespace="http://FiXi.Contracts/PrivateServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.fixionline.com/PrivateServices/TransactionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FiXi.DataContract" />
+  <xs:element name="GetTeamPaymentTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FiXi.DataContract" minOccurs="0" name="GetTeamPaymentTransactionRequest" nillable="true" type="q1:GetTeamPaymentTransactionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeamPaymentTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FiXi.DataContract" minOccurs="0" name="GetTeamPaymentTransactionsResult" nillable="true" type="q2:GetTeamPaymentTransactionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTeamPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FiXi.DataContract" minOccurs="0" name="SaveTeamPaymentRequest" nillable="true" type="q3:SaveTeamPaymentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTeamPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FiXi.DataContract" minOccurs="0" name="SaveTeamPaymentResult" nillable="true" type="q4:SaveTeamPaymentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FiXi.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FiXi.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.fixionline.com/PrivateServices/TeamService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://api.fixionline.com/PrivateServices/TeamService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GetTeamDetailsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="TeamId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTeamDetailsRequest" nillable="true" type="tns:GetTeamDetailsRequest" />
+  <xs:complexType name="GetTeamDetailsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TeamDetailView" nillable="true" type="tns:TeamDetailView" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTeamDetailsResponse" nillable="true" type="tns:GetTeamDetailsResponse" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:complexType name="TeamDetailView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DiscountRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DiscountType" type="tns:DiscountTypeEnum" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayerViewList" nillable="true" type="tns:ArrayOfCustomerAsPlayerView" />
+      <xs:element minOccurs="0" name="Status" type="tns:StatusEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeamDetailView" nillable="true" type="tns:TeamDetailView" />
+  <xs:simpleType name="DiscountTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Percentage" />
+      <xs:enumeration value="Currency" />
+      <xs:enumeration value="NoDiscount" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DiscountTypeEnum" nillable="true" type="tns:DiscountTypeEnum" />
+  <xs:complexType name="ArrayOfCustomerAsPlayerView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerAsPlayerView" nillable="true" type="tns:CustomerAsPlayerView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerAsPlayerView" nillable="true" type="tns:ArrayOfCustomerAsPlayerView" />
+  <xs:complexType name="CustomerAsPlayerView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modified" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Role" type="tns:PlayerRoleEnum" />
+      <xs:element minOccurs="0" name="ShirtNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerAsPlayerView" nillable="true" type="tns:CustomerAsPlayerView" />
+  <xs:simpleType name="PlayerRoleEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Coach">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PlayerCoach">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Captain">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Player">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Contact">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ViceCaptain">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlayerRoleEnum" nillable="true" type="tns:PlayerRoleEnum" />
+  <xs:simpleType name="StatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Inactive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatusEnum" nillable="true" type="tns:StatusEnum" />
+  <xs:complexType name="ClearMessageAsReadRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="TeamID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClearMessageAsReadRequest" nillable="true" type="tns:ClearMessageAsReadRequest" />
+  <xs:complexType name="MarkMessageAsReadResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MarkMessageAsReadResponse" nillable="true" type="tns:MarkMessageAsReadResponse" />
+  <xs:complexType name="GetTeamDetailsByIdListRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TeamIdList" nillable="true" type="q1:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTeamDetailsByIdListRequest" nillable="true" type="tns:GetTeamDetailsByIdListRequest" />
+  <xs:complexType name="GetTeamDetailsByIdListResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TeamDetailViewList" nillable="true" type="tns:ArrayOfTeamDetailView" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTeamDetailsByIdListResponse" nillable="true" type="tns:GetTeamDetailsByIdListResponse" />
+  <xs:complexType name="ArrayOfTeamDetailView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TeamDetailView" nillable="true" type="tns:TeamDetailView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTeamDetailView" nillable="true" type="tns:ArrayOfTeamDetailView" />
+</xs:schema>

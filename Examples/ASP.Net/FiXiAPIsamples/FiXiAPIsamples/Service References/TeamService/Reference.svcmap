@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="85e21567-fe1c-40fd-ac35-bf06101d945f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://api.fixionline.com/PrivateServices/TeamService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TeamService.xsd" MetadataType="Schema" ID="05b8b399-7870-4b27-91aa-256bd4dd6457" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TeamService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TeamService1.xsd" MetadataType="Schema" ID="c6d0b132-f052-4bbb-acdb-1cfe1234952d" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TeamService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TeamService2.xsd" MetadataType="Schema" ID="91168dbc-c5fb-4e2f-b553-06a7c5e198ff" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TeamService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TeamService.wsdl" MetadataType="Wsdl" ID="fe873815-a10f-4639-8546-724c145b2c25" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TeamService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TeamService.disco" MetadataType="Disco" ID="2f242a7e-e9ea-4657-a186-5abb3151f468" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TeamService.svc?disco" />
+    <MetadataFile FileName="TeamService1.wsdl" MetadataType="Wsdl" ID="ac461990-4946-4976-9c21-9ed66e05c789" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TeamService.svc?wsdl" />
+    <MetadataFile FileName="TeamService3.xsd" MetadataType="Schema" ID="852f4345-97c5-483a-84dd-0aebc41ae018" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/TeamService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

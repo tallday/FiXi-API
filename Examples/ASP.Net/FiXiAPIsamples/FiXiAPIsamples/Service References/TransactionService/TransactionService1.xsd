@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FiXi.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FiXi.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.fixionline.com/PrivateServices/TransactionService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GetTeamPaymentTransactionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="TeamId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTeamPaymentTransactionRequest" nillable="true" type="tns:GetTeamPaymentTransactionRequest" />
+  <xs:complexType name="GetTeamPaymentTransactionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TeamPaymentTransactionViewList" nillable="true" type="tns:ArrayOfTeamPaymentTransactionListView" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTeamPaymentTransactionResponse" nillable="true" type="tns:GetTeamPaymentTransactionResponse" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:complexType name="ArrayOfTeamPaymentTransactionListView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TeamPaymentTransactionListView" nillable="true" type="tns:TeamPaymentTransactionListView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTeamPaymentTransactionListView" nillable="true" type="tns:ArrayOfTeamPaymentTransactionListView" />
+  <xs:complexType name="TeamPaymentTransactionListView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adjustment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Credit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Debit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionBasicView" nillable="true" type="tns:DivisionBasicView" />
+      <xs:element minOccurs="0" name="Round" type="xs:int" />
+      <xs:element minOccurs="0" name="SeasonBasicView" nillable="true" type="tns:SeasonBasicView" />
+      <xs:element minOccurs="0" name="SportBasicView" nillable="true" type="tns:SportBasicView" />
+      <xs:element minOccurs="0" name="TeamPaymentId" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionId" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionType" type="tns:TransactionTypeEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TeamPaymentTransactionListView" nillable="true" type="tns:TeamPaymentTransactionListView" />
+  <xs:complexType name="DivisionBasicView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DivisionBasicView" nillable="true" type="tns:DivisionBasicView" />
+  <xs:complexType name="SeasonBasicView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeasonBasicView" nillable="true" type="tns:SeasonBasicView" />
+  <xs:complexType name="SportBasicView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColorHTML" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TextColorHTML" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SportBasicView" nillable="true" type="tns:SportBasicView" />
+  <xs:simpleType name="TransactionTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TeamPayment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionTypeEnum" nillable="true" type="tns:TransactionTypeEnum" />
+  <xs:complexType name="SaveTeamPaymentRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllocationSeriesID" type="xs:int" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionID" type="xs:int" />
+      <xs:element minOccurs="0" name="PosTransactionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Round" type="xs:int" />
+      <xs:element minOccurs="0" name="SeasonID" type="xs:int" />
+      <xs:element minOccurs="0" name="SportID" type="xs:int" />
+      <xs:element minOccurs="0" name="TeamID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaveTeamPaymentRequest" nillable="true" type="tns:SaveTeamPaymentRequest" />
+  <xs:complexType name="SaveTeamPaymentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TeamPaymentID" type="xs:int" />
+          <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveTeamPaymentResponse" nillable="true" type="tns:SaveTeamPaymentResponse" />
+</xs:schema>

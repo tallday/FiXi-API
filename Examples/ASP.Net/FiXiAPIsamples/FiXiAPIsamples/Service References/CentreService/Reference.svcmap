@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b504d4f-1e33-413e-9faa-99501811ce5b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://api.fixionline.com/PrivateServices/CentreService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CentreService.xsd" MetadataType="Schema" ID="d8c611e7-f329-4c75-bd76-18fd9843fc51" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/CentreService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CentreService.wsdl" MetadataType="Wsdl" ID="c9134095-ff6c-47b8-9728-a4000eda5d55" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/CentreService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CentreService1.xsd" MetadataType="Schema" ID="0be43a63-3ddc-4188-9a2b-9117a63e82ab" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/CentreService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CentreService.disco" MetadataType="Disco" ID="36cba6dc-cb38-4185-b9f1-7018410c67ed" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/CentreService.svc?disco" />
+    <MetadataFile FileName="CentreService1.wsdl" MetadataType="Wsdl" ID="1cf639e6-8edc-4d0e-ae62-b59770205023" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/CentreService.svc?wsdl" />
+    <MetadataFile FileName="CentreService2.xsd" MetadataType="Schema" ID="d9fd2b6c-e62e-44bb-80d5-9c5edbb19e92" SourceId="1" SourceUrl="http://api.fixionline.com/PrivateServices/CentreService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

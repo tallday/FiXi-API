@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FiXi.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FiXi.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.fixionline.com/PrivateServices/CustomerService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="SaveCustomerAttendanceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Attended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CalendarId" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="TeamId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaveCustomerAttendanceRequest" nillable="true" type="tns:SaveCustomerAttendanceRequest" />
+  <xs:complexType name="SaveCustomerAttendanceResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveCustomerAttendanceResponse" nillable="true" type="tns:SaveCustomerAttendanceResponse" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:complexType name="SaveCustomerAttendanceListRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="AttendanceList" nillable="true" type="tns:ArrayOfAttendance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaveCustomerAttendanceListRequest" nillable="true" type="tns:SaveCustomerAttendanceListRequest" />
+  <xs:complexType name="ArrayOfAttendance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attendance" nillable="true" type="tns:Attendance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttendance" nillable="true" type="tns:ArrayOfAttendance" />
+  <xs:complexType name="Attendance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CalendarId" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="TeamId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attendance" nillable="true" type="tns:Attendance" />
+  <xs:complexType name="SaveCustomerAttendanceListResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveCustomerAttendanceListResponse" nillable="true" type="tns:SaveCustomerAttendanceListResponse" />
+</xs:schema>
